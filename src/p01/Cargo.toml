@@ -1,0 +1,6 @@
+[package]
+name = "p01"
+version = "0.1.0"
+authors = ["Zaur Nasibov <zaur@znasibov.info>"]
+
+[dependencies]
