@@ -4,22 +4,22 @@ Guessing game
 Problem description
 -------------------
 
-The program guesses a number between 1 and 99.
+The program thinks of a number between 1 and 99.
 A user has to find that number by entering the numbers.
 The program tells, whether the entered number is bigger or smaller than the guessed number.
 
 Example
 -------
 
-Program guesses 42
-User inputs 30
+Program thinks of 42
+User guesses 30
 Program: "Wrong, my number is greater than that"
 
-User inputs 50
+User guesses 50
 Program: "Wrong, my number is smaller than that"
 
-User inputs 40
+User guesses 40
 Program: "Wrong, my number is greater than that"
 
-User inputs 42
+User guesses 42
 Program: "You've found it! The number was 42"
