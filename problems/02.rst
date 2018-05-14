@@ -1,0 +1,12 @@
+Binary search tree
+==================
+
+Problem description
+-------------------
+
+Implement a binary search tree, with the following functionality:
+* Add an item to a tree
+* Find an item in the tree
+  * Print found item, its parent and siblings
+* Remove an item from a tree
+* Re-balance the tree
