@@ -21,5 +21,5 @@ Program: "Wrong, my number is smaller than that"
 User guesses 40
 Program: "Wrong, my number is greater than that"
 
-User guesses 42
+User guesses 42.. 
 Program: "You've found it! The number was 42"
