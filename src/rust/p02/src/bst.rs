@@ -1,4 +1,4 @@
-use std::cmp::{PartialOrd, Ordering};
+use std::cmp::{Ord, Ordering};
 use std::fmt;
 
 type OptNode<T> = Option<Box<Node<T>>>;
@@ -18,7 +18,7 @@ pub struct TreeIterator<'a, T: 'a> {
     right_unvisited: Vec<&'a Node<T>>,
 }
 
-impl<T: PartialOrd> Node<T> {
+impl<T: Ord> Node<T> {
     pub fn new(value: T) -> Self {
         Self {
             value: value,
@@ -28,7 +28,7 @@ impl<T: PartialOrd> Node<T> {
     }
 }
 
-impl<T: PartialOrd + fmt::Display> fmt::Display for Node<T> {
+impl<T: Ord + fmt::Display> fmt::Display for Node<T> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let left_s = self.left.as_ref().map_or(String::from("--"), |vp| format!("{}", vp.value));
 
@@ -41,7 +41,7 @@ impl<T: PartialOrd + fmt::Display> fmt::Display for Node<T> {
 }
 
 
-impl <T: PartialOrd> Tree<T> {
+impl <T: Ord> Tree<T> {
     pub fn new() -> Self {
         Self {
             root: None
@@ -71,10 +71,9 @@ impl <T: PartialOrd> Tree<T> {
     where T: PartialEq<T> {
         false
     }
-
 }
 
-impl <T: PartialOrd> From<Vec<T>> for Tree<T> {
+impl <T: Ord> From<Vec<T>> for Tree<T> {
     fn from(vector: Vec<T>) -> Tree<T> {
         let mut tree: Tree<T> = Tree::new();
         for v in vector {
@@ -84,7 +83,7 @@ impl <T: PartialOrd> From<Vec<T>> for Tree<T> {
     }
 }
 
-impl <'a, T: PartialOrd> Iterator for TreeIterator<'a, T> {
+impl <'a, T: Ord> Iterator for TreeIterator<'a, T> {
     type Item = Box<Node<T>>;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -92,7 +91,7 @@ impl <'a, T: PartialOrd> Iterator for TreeIterator<'a, T> {
     }
 }
 
-// impl<T: PartialOrd + fmt::Display> fmt::Display for Tree<T> {
+// impl<T: Ord + fmt::Display> fmt::Display for Tree<T> {
 //     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
 //         let root = self.root.as_ref().map_or(String::from("--"), |vp| format!("{}", vp.value));
 
